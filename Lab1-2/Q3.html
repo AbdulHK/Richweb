@@ -1,39 +1,119 @@
+<!--Abdulellah Hakim
+D12122837
+Rich Web Lab 1-2
+Shopping Basket Task-Q3 -->
+
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="description" content="Shopping Basket">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>Shopping Basket</title>
 </head>
-<body>
-<h2>Shopping Basket</h2>
-  <table>
-		<form role="form"action="" method="post" name="custbook">
-		<label>Customer ID</label>
-		<input type="text" class="form-control" id="inputcustid" name="inputcustid" placeholder="Enter your Customer ID"/>
-        <td>
-        <textarea rows="4" cols="50" placeholder="comment">
- 
-        </textarea>
-  </br>
-  <input type="radio" name="gender" value="male"> Male<br>
-  <input type="radio" name="gender" value="female"> Female<br>
-  <input type="radio" name="gender" value="other"> Other
-  </br>
-  <input type="checkbox" name="vehicle" value="onfoot"> On foot<br>
-  <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
-  <input type="checkbox" name="vehicle" value="Car" checked> I have a car<br>
-  <select>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-  </select>
-  </br>
-  <input type="submit" value="Submit">
-  <input type="reset" value="reset">
+<!--CSS to style the table and the page-->
 
+<style>
+
+body {background-color: powderblue; border:1px solid;}
+table,th,td   {border:1px solid ;}
+table{width:50%; text-align: center;}
+</style>
+<body>
+
+   <form>
+    First name<br>
+    <input type="text" name="firstname" value="" placeholder=enter First Name>
+    <br>
+    Last name<br>
+    <input type="text" name="lastname" value="" placeholder="enter Last Name">
+    
+  </br></br>
+   Please tick the item you wish to buy
+   <br></br>
+   <table>
+  <tr>
+    <td><input type="checkbox" name="tick" value="appleearphones"></td>
+    <td> Headphones</td>
+    <td> 
+    <select name="quantaty">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+    </tselec>
+    </td>
+    </tr>
+    <tr>
+    <td><input type="checkbox" name="tick" value="airpods"></td>
+    <td>AirPods</td>
+    <td>
+        <select name="quantaty">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+    </tselec>
+    </td>
+    </tr>
+    <tr>
+    <td><input type="checkbox" name="tick" value="iphone7s"></td>
+    <td>iPhone7s</td>
+    <td>
+    <select name="quantaty">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+    </selec>
+    </td>
+    </tr>
+    <tr>
+    <td><input type="checkbox" name="tick" value="iphone7"></td>
+    <td>iPhone7</td>
+    <td>
+    <select name="quantaty">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+    </selec>
+    </td>
+    </tr> 
+    <tr>
+    <td><input type="checkbox" name="tick" value="AppleWatchSeries2"></td>
+    <td>Apple watch series 2</td>
+    <td>
+    <select name="quantaty">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+    </selec>
+    </td>
+  </tr>
+</table>  
+   <br><br>
+	Payment Options<br>
+  <select name="payment">
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="cashy">cash on delivery</option>
+  </select>
+  <br> <br>
+  Delivery Option<br>
+      <input type="radio" name="delivery" value="home" checked>Home Delivery<br>
+      <input type="radio" name="delivery" value="PO"> PO Delivery<br>
+      <input type="radio" name="deliver" value="collection"> Collection</br>
+  <br><br>
+  Instructions<br>
+  <textarea name="msg" rows="10" cols="40"></textarea>
+  <br>
+  <input type="submit" value="Submit">
+   <input type="reset" value="Cancel"><br>   <br><br>
+  <label></label><br>
+   
+  </form>
 
 </body>
 </html>
