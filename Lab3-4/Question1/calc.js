@@ -1,78 +1,47 @@
-  var div = document.createElement('div');
-  div.setAttribute('id', 'div');
-  var t = document.createTextNode("Calculator");
-  div.setAttribute("style", "background-color: grey; width:220px;margin-left:5px;");
-  div.appendChild(t);
-  document.body.appendChild(div);
+//Abdulellah Hakim
+//D12122837
+//Rich Web Lab 2 Question 1
+//create a calclutor front end using DOM API
 
-  //textarea
-  var text = document.createElement('input');
-  text.setAttribute('type', 'text');
-  text.setAttribute('id', 'text')
-  text.setAttribute('style',"margin-left:5px;");
-  document.body.appendChild(text);
-  var aa = document.getElementById("text").style.width = "220px";
-  var a = document.getElementById('text');
-  a.value = '0';
-  document.write("</br>");
+// Create calculator container
+    let calculator = document.createElement("div");
+    calculator.setAttribute('id',"calculator");
+    calculator.setAttribute('style',"width:250px; fontstyle;100%; border;1px solid; padding:10px; boarderRadius:7px; margin:0 auto 0 auto; fontFamily;Verdana;");
+    document.body.appendChild(calculator);
 
-  //buttons
-  var button = [];
-  for (var i=0; i<20; i++) 
-  {
-    button[i] = document.createElement('input');
-    button[i].setAttribute('type','button');
-    button[i].setAttribute('id', i);
-    button[i].setAttribute('style',"background-color:grey;height: 30px;border-radius:10px;margin-left:10px;");
-    document.body.appendChild(button[i]);
-    document.getElementById(i).style.width = "45px";
-    if(i > 3 && i < 5)
-    {
-      document.write("</br>");
-      
-      document.body.appendChild(button[i]);
-    }
-    else if (i >= 4 && i < 5) {
-      document.write("</br>");
-      document.body.appendChild(button[i]);
-    }
-    else if (i >= 8 && i < 9) {
-      document.write("</br>");
-      document.body.appendChild(button[i]);
-    }
-    else if (i >= 12 && i < 13) {
-      document.write("</br>");
-      document.body.appendChild(button[i]);
-    }
-    else if (i >= 16 && i < 17) {
-      document.write("</br>");
-      document.body.appendChild(button[i]);
+    let input = document.createElement("input");
+    input.setAttribute('type',"text");
+    input.placeholder = "0"; 
+    input.setAttribute('style',"fontSize:2em; textAlign:right; borderradius:5px; width:250px; height:35px; marginbottom: 10px; padding:1%;");
+
+    calculator.appendChild(input);
+
+    let flex_container = document.createElement("div");
+    flex_container.setAttribute('id',"flex-container");
+    flex_container.setAttribute('style',"display:inline-flex;justifyContent:space-between;");
+    flex_container.style.flexFlow = "row wrap";
+    calculator.appendChild(flex_container);
+
+    var characters = ["(", ")", "±", "÷", "7", 
+                      "8", "9", "x", "4", "5", 
+                      "6", "-", "1", "2", "3", 
+                      "+", "0", ".", "C", "="];
+
+    for (let i = 0; i < characters.length; i++) {
+      let button = createButton(characters[i]);
+      flex_container.appendChild(button);
     }
 
-  }
-
-  //buttons values
-var a = document.getElementById(0);		a.value = '(';
-    a = document.getElementById(1);		a.value = ')';
-    a = document.getElementById(2);		a.value = '+';
-    a = document.getElementById(3);		a.value = ':';
-    
-    a = document.getElementById(4);		a.value = '7';
-    a = document.getElementById(5);		a.value = '8';
-    a = document.getElementById(6);		a.value = '9';
-    a = document.getElementById(7);		a.value = 'x';
-    
-    a = document.getElementById(8);		a.value = '4';
-    a = document.getElementById(9);		a.value = '5';
-    a = document.getElementById(10);  a.value = '6';
-    a = document.getElementById(11);	  a.value = '-';
-    
-    a = document.getElementById(12);	  a.value = '1';
-    a = document.getElementById(13);	  a.value = '2';
-    a = document.getElementById(14);	  a.value = '3';
-    a = document.getElementById(15);	  a.value = '+';
-    
-    a = document.getElementById(16);	  a.value = '0';
-    a = document.getElementById(17);	  a.value = '.';
-    a = document.getElementById(18);	  a.value = 'C';
-    a = document.getElementById(19);	  a.value = '=';
+    function createButton(character) {
+      let button = document.createElement("button"); 
+      button.className = "flex-item";
+      button.innerHTML = character;
+      button.style.borderRadius = "5px";
+      button.style.width = "50px";
+      button.style.textAlign = "center";
+      button.style.padding = ".5em";
+      button.style.fontSize = "1em";
+      button.style.flexGrow = "1";
+      button.style.margin = "0 5px 5px 0";
+      return button;
+    }

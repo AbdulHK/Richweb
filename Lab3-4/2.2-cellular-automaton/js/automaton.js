@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>automaton</title>
-</head>
-<body>
-<script >// Create container
+// Create container
 let container = document.createElement("div");
 container.id = "container";
 container.style.width = "1010px";
@@ -94,6 +88,4 @@ function createCell(state) {
 		cell.title = "inactive";
 	}
 	return cell;
-}</script>
-</body>
-</html>
+}
